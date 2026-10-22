@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Maison Alba</title>
+<meta name="description" content="Maison Alba, bistrot de vingt couverts rue des Tanneurs à Lyon. Le menu s’écrit après le marché.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:opsz,wght@6..72,400..600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#carte">Aller à la carte</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#">Maison Alba</a>
+    <nav aria-label="Navigation">
+      <a href="#carte">Carte</a>
+      <a href="#maison">Maison</a>
+      <a href="#reserver">Réserver</a>
+      <a href="#infos">Horaires</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Ce que le marché a donné ce matin.</h1>
+    <p class="intro">Bistrot de vingt couverts, rue des Tanneurs à Lyon. Le menu s’écrit après le marché et s’efface le soir.</p>
+    <p class="status" id="status" aria-live="polite">Mardi à samedi, midi et soir</p>
+    <a class="btn" href="#reserver">Réserver une table</a>
+  </div>
+
+  <aside class="ticket" aria-label="Ardoise du jour">
+    <p class="t-name">Maison Alba</p>
+    <p class="t-addr">14 rue des Tanneurs, Lyon 6e</p>
+    <p class="t-date" id="today">Menu du jour</p>
+    <hr>
+    <ul>
+      <li><span>Velouté de potimarron</span><b>9</b></li>
+      <li><span>Dos de cabillaud, risotto d’orge</span><b>26</b></li>
+      <li><span>Tarte fine aux poires</span><b>9</b></li>
+    </ul>
+    <hr>
+    <p class="t-sum"><span>Formule du midi, en semaine</span><b>22</b></p>
+    <p class="t-note">Prix en euros, service compris.</p>
+    <div class="stamp" aria-hidden="true">Fait<br>maison</div>
+  </aside>
+</section>
+
+<section class="carte" id="carte">
+  <div class="wrap">
+    <h2>La carte de la semaine 43</h2>
+    <div class="menu">
+      <div>
+        <h3>Entrées</h3>
+        <ul>
+          <li><p><b>Velouté de potimarron</b><i>châtaignes grillées, huile de noisette</i></p><span class="dots"></span><em>9</em></li>
+          <li><p><b>Œuf parfait</b><i>girolles, jus de volaille, persil</i></p><span class="dots"></span><em>12</em></li>
+          <li><p><b>Burrata de la Drôme</b><i>figues rôties, miel de thym</i></p><span class="dots"></span><em>13</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Plats</h3>
+        <ul>
+          <li><p><b>Pot-au-feu de joue de bœuf</b><i>légumes racines, bouillon clair</i></p><span class="dots"></span><em>24</em></li>
+          <li><p><b>Dos de cabillaud</b><i>risotto d’orge, beurre blanc citronné</i></p><span class="dots"></span><em>26</em></li>
+          <li><p><b>Gnocchis au four</b><i>courge, sauge, vieux comté</i></p><span class="dots"></span><em>19</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Desserts</h3>
+        <ul>
+          <li><p><b>Tarte fine aux poires</b><i>crème d’amande, glace vanille</i></p><span class="dots"></span><em>9</em></li>
+          <li><p><b>Mousse au chocolat noir</b><i>fleur de sel, pain grillé</i></p><span class="dots"></span><em>8</em></li>
+          <li><p><b>Fromages affinés</b><i>sélection de la crémerie Duval</i></p><span class="dots"></span><em>11</em></li>
+        </ul>
+      </div>
+    </div>
+    <p class="menu-note">Formule du midi en semaine : entrée et plat, ou plat et dessert, 22 €. Dites-nous vos allergies en réservant, on adapte.</p>
+  </div>
+</section>
+
+<section class="maison" id="maison">
+  <div class="wrap">
+    <div class="maison-text">
+      <h2>Vingt couverts, un four à bois, six plats.</h2>
+      <p>Camille et Théo ont ouvert Maison Alba en 2019, dans une ancienne boulangerie de la rue des Tanneurs. Le four est resté dans la salle. Il cuit le pain l’après-midi, les gnocchis et les légumes le soir.</p>
+      <p>Le menu change chaque semaine, parfois chaque jour. Il dépend de ce qui arrive des fermes autour de Lyon, livré deux fois par semaine.</p>
+    </div>
+    <div class="producers">
+      <h3>Ceux qui nous livrent</h3>
+      <table>
+        <thead><tr><th scope="col">Producteur</th><th scope="col">Ce qu’il livre</th><th scope="col" class="num">Distance</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Poissonnerie Garnier</th><td>cabillaud, poissons du jour</td><td class="num">3 km</td></tr>
+          <tr><th scope="row">Fromagerie Duval</th><td>comté, fromages affinés</td><td class="num">4 km</td></tr>
+          <tr><th scope="row">Moulin de Vaugneray</th><td>farine de blé</td><td class="num">24 km</td></tr>
+          <tr><th scope="row">Jardins de l’Azergues</th><td>légumes, herbes, courges</td><td class="num">31 km</td></tr>
+          <tr><th scope="row">Ferme des Collonges</th><td>œufs, volailles</td><td class="num">38 km</td></tr>
+          <tr><th scope="row">Vergers Perrin</th><td>poires, pommes</td><td class="num">47 km</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="reserver" id="reserver">
+  <div class="wrap">
+    <div class="plan-col">
+      <h2>Choisissez votre table.</h2>
+      <p>La salle compte sept tables. Touchez celle que vous voulez, on la note dans votre demande.</p>
+      <svg class="plan" id="plan" viewBox="0 0 480 340" role="group" aria-label="Plan de la salle"></svg>
+    </div>
+    <form id="resa" data-mailto="contact@maison-alba.example">
+      <p class="chosen" id="chosen" aria-live="polite">Aucune table choisie : on vous en proposera une.</p>
+      <label for="nom">Nom</label>
+      <input id="nom" name="nom" required autocomplete="name">
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+      <label for="date">Date</label>
+      <input id="date" name="date" type="date" required>
+      <label for="message">Allergies, occasion</label>
+      <textarea id="message" name="message" rows="3"></textarea>
+      <button class="btn" type="submit">Envoyer la demande</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot" id="infos">
+  <div class="wrap">
+    <div class="hours">
+      <h2>Horaires</h2>
+      <table>
+        <tr><th scope="row">Lundi</th><td>fermé</td></tr>
+        <tr><th scope="row">Mardi à vendredi</th><td>12 h à 14 h, 19 h à 22 h</td></tr>
+        <tr><th scope="row">Samedi</th><td>12 h à 14 h 30, 19 h à 23 h</td></tr>
+        <tr><th scope="row">Dimanche</th><td>brunch, 12 h à 15 h</td></tr>
+      </table>
+    </div>
+    <address>
+      14 rue des Tanneurs<br>69006 Lyon<br><br>
+      04 78 00 12 34<br>contact@maison-alba.example
+    </address>
+  </div>
+  <div class="wrap">
+    <p class="giant" aria-hidden="true">Maison Alba</p>
+    <p class="credit">Site de démonstration conçu par <a href="https://loan-heron.fr">Loan Heron</a>. Établissement fictif.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
