@@ -1,4 +1,4 @@
-// Date et ouverture, mouvement de la nature morte, carte des producteurs, plan de salle, formulaire
+// Date et ouverture, titre et photos animés, défilement de la journée, carte des producteurs, plan de salle, formulaire
 const TZ = 'Europe/Paris';
 const HOURS = { 0: [[12, 15]], 1: [], 2: [[12, 14], [19, 22]], 3: [[12, 14], [19, 22]], 4: [[12, 14], [19, 22]], 5: [[12, 14], [19, 22]], 6: [[12, 14.5], [19, 23]] };
 const DAYS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
@@ -28,14 +28,88 @@ function minDate() {
   if (input) input.min = new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(new Date());
 }
 
-// Parallaxe douce de la nature morte (souris)
-function stage() {
-  const s = document.getElementById('stage');
-  if (!s || still || !matchMedia('(hover: hover)').matches) return;
-  addEventListener('pointermove', (e) => {
-    s.style.setProperty('--mx', ((e.clientX / innerWidth) - 0.5).toFixed(3));
-    s.style.setProperty('--my', ((e.clientY / innerHeight) - 0.5).toFixed(3));
+// Titre : chaque mot monte de sous sa ligne
+function title() {
+  const h = document.querySelector('.hero h1');
+  if (!h || still) return;
+  let i = 0;
+  h.innerHTML = h.textContent.split(' ').map((w) => `<span class="w"><span style="--i:${i++}">${w}</span></span>`).join(' ');
+}
+
+// Photos du hero : parallaxe à la souris et au défilement
+function collage() {
+  const c = document.getElementById('collage');
+  if (!c || still) return;
+  if (matchMedia('(hover: hover)').matches) addEventListener('pointermove', (e) => {
+    c.style.setProperty('--mx', ((e.clientX / innerWidth) - 0.5).toFixed(3));
+    c.style.setProperty('--my', ((e.clientY / innerHeight) - 0.5).toFixed(3));
   }, { passive: true });
+  onFrame(() => c.style.setProperty('--sy', Math.min(scrollY / innerHeight, 1.2).toFixed(3)));
+}
+
+// Une seule boucle de rendu pour tout ce qui suit le défilement
+const frames = [];
+let ticking = false;
+function onFrame(fn) { frames.push(fn); fn(); }
+function tick() { if (ticking) return; ticking = true; requestAnimationFrame(() => { frames.forEach((f) => f()); ticking = false; }); }
+addEventListener('scroll', tick, { passive: true });
+addEventListener('resize', tick);
+
+// Bandeau de salle : la photo défile plus lentement que la page
+function band() {
+  const img = document.querySelector('[data-par]');
+  if (!img || still) return;
+  const box = img.parentElement;
+  onFrame(() => {
+    const r = box.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    const p = (r.top + r.height / 2 - innerHeight / 2) / (innerHeight + r.height);
+    img.style.setProperty('--p', (p * r.height * -0.22).toFixed(1) + 'px');
+  });
+}
+
+// Une journée : sur grand écran, la section s'épingle et défile à l'horizontale
+function journey() {
+  const sec = document.getElementById('jour'), track = document.getElementById('track'), bar = document.getElementById('bar');
+  if (!sec) return;
+  const wide = matchMedia('(min-width: 901px)');
+  let max = 0;
+  const layout = () => {
+    const on = wide.matches && !still;
+    sec.classList.toggle('pinned', on);
+    track.style.removeProperty('--tx');
+    // Course horizontale : jusqu'à ce que la dernière photo garde la même marge que la première
+    max = on ? Math.max(track.lastElementChild.getBoundingClientRect().right + parseFloat(getComputedStyle(track).paddingLeft) - innerWidth, 0) : 0;
+    sec.style.height = on ? (max + innerHeight * 1.15) + 'px' : '';
+    tick();
+  };
+  onFrame(() => {
+    if (sec.classList.contains('pinned')) {
+      const dist = sec.offsetHeight - innerHeight;
+      const p = Math.min(Math.max((scrollY - sec.offsetTop) / dist, 0), 1);
+      track.style.setProperty('--tx', (-p * max).toFixed(1) + 'px');
+      bar.style.setProperty('--prog', p.toFixed(3));
+    } else {
+      const m = track.scrollWidth - track.clientWidth;
+      bar.style.setProperty('--prog', m > 0 ? (track.scrollLeft / m).toFixed(3) : 1);
+    }
+  });
+  track.addEventListener('scroll', tick, { passive: true });
+  wide.addEventListener('change', layout);
+  addEventListener('resize', layout);
+  addEventListener('load', layout);
+  layout();
+}
+
+// Apparitions au défilement : photos qui se dévoilent, textes qui montent
+function reveals() {
+  const els = document.querySelectorAll('.rv, .rv-t, .step');
+  if (!document.documentElement.classList.contains('js-anim')) return;
+  document.querySelectorAll('.step').forEach((s, i) => s.style.setProperty('--sd', (i * 0.12) + 's'));
+  // Une photo masquée n'a pas de surface visible : on observe donc son parent
+  const map = new Map();
+  const io = new IntersectionObserver((en) => en.forEach((e) => { if (e.isIntersecting) { map.get(e.target).forEach((el) => el.classList.add('in')); io.unobserve(e.target); } }), { threshold: 0.2 });
+  els.forEach((el) => { const t = el.classList.contains('rv') ? el.parentElement : el; map.set(t, [...(map.get(t) || []), el]); io.observe(t); });
 }
 
 const NS = 'http://www.w3.org/2000/svg';
@@ -130,4 +204,4 @@ function resa() {
   });
 }
 
-status(); minDate(); stage(); radar(); plan(); resa();
+status(); minDate(); title(); collage(); band(); journey(); reveals(); radar(); plan(); resa();
