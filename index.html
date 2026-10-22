@@ -2,121 +2,158 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maison Alba</title>
-<meta name="description" content="Maison Alba, bistrot de vingt couverts rue des Tanneurs à Lyon. Le menu s’écrit après le marché.">
+<meta name="description" content="Maison Alba, bistrot de 20 couverts rue des Tanneurs à Lyon. Cuisine d'automne au four à bois, menu écrit chaque matin après le marché. Site de démonstration.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314392f'/%3E%3Ccircle cx='16' cy='17' r='8' fill='%23ee7b2e'/%3E%3Cpath d='M15 9c0-3 1-4 3-5 .5 2 .5 4-1 5z' fill='%237da25a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:opsz,wght@6..72,400..600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="s-pumpkin" viewBox="0 0 200 200">
+      <ellipse cx="62" cy="120" rx="44" ry="62" fill="#C9561A" transform="rotate(-12 62 120)"/>
+      <ellipse cx="138" cy="120" rx="44" ry="62" fill="#C9561A" transform="rotate(12 138 120)"/>
+      <ellipse cx="100" cy="122" rx="52" ry="66" fill="#EE7B2E"/>
+      <path d="M100 60c-8 34-8 86 0 124" stroke="#C9561A" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".55"/>
+      <path d="M74 66c-10 26-10 76 0 112M126 66c10 26 10 76 0 112" stroke="#C9561A" stroke-width="3" fill="none" stroke-linecap="round" opacity=".4"/>
+      <path d="M95 62c-3-14 1-24 9-30 4 9 3 20 0 30z" fill="#3B5A2A"/>
+      <ellipse cx="76" cy="98" rx="8" ry="18" fill="#fff" opacity=".2" transform="rotate(14 76 98)"/>
+    </symbol>
+    <symbol id="s-pear" viewBox="0 0 200 200">
+      <path d="M100 28c11 0 17 11 17 25 0 18 12 28 22 46 15 25 4 66-39 66s-54-41-39-66c10-18 22-28 22-46 0-14 6-25 17-25z" fill="#EBC95B"/>
+      <path d="M100 187c-31 0-46-27-37-50-4 31 15 48 37 50z" fill="#D49A2E" opacity=".55"/>
+      <ellipse cx="82" cy="128" rx="7" ry="20" fill="#fff" opacity=".28" transform="rotate(12 82 128)"/>
+      <circle cx="108" cy="116" r="2.4" fill="#9A6B1B" opacity=".6"/><circle cx="122" cy="140" r="2.4" fill="#9A6B1B" opacity=".6"/><circle cx="96" cy="156" r="2.4" fill="#9A6B1B" opacity=".6"/>
+      <path d="M100 30c0-10 3-17 9-23" stroke="#4A3921" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <path d="M106 22c14-15 36-11 42-4-8 13-30 17-42 4z" fill="#7DA25A"/>
+    </symbol>
+    <symbol id="s-fig" viewBox="0 0 200 200">
+      <path d="M100 38c9 0 13 7 13 15 0 17 29 31 29 64 0 38-25 59-42 59s-42-21-42-59c0-33 29-47 29-64 0-8 4-15 13-15z" fill="#5A2C4F"/>
+      <path d="M100 186c-22 0-38-18-38-48 4 28 22 40 38 40z" fill="#3E1B37" opacity=".7"/>
+      <path d="M92 60c-4 22-24 38-24 62" stroke="#8E5380" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+      <ellipse cx="82" cy="118" rx="6" ry="18" fill="#fff" opacity=".18" transform="rotate(10 82 118)"/>
+      <path d="M99 40c0-8 1-13 6-18" stroke="#3B5A2A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="s-girolle" viewBox="0 0 200 200">
+      <path d="M76 100c-8 32-5 56-12 78 20 8 52 8 72 0-7-22-4-46-12-78z" fill="#F3D59A"/>
+      <path d="M92 104c-2 26 0 48-4 70" stroke="#E2B968" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+      <path d="M26 98c0-38 32-62 74-62s74 24 74 62c0 9-22 12-74 12S26 107 26 98z" fill="#E59A2C"/>
+      <path d="M26 98c0 9 22 12 74 12s74-3 74-12c0 14-30 22-74 22S26 112 26 98z" fill="#F3C06B"/>
+      <path d="M60 70c10-12 26-18 40-18" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".3"/>
+    </symbol>
+    <symbol id="s-chestnut" viewBox="0 0 200 200">
+      <path d="M100 38c42 0 66 42 66 88 0 32-28 48-66 48S34 158 34 126c0-46 24-88 66-88z" fill="#7A3E1D"/>
+      <path d="M60 156c12 16 68 16 80 0 0 16-22 28-40 28s-40-12-40-28z" fill="#D2A474"/>
+      <path d="M100 40c-4 40-4 80 0 120" stroke="#5B2A10" stroke-width="3" fill="none" opacity=".4"/>
+      <ellipse cx="74" cy="92" rx="8" ry="20" fill="#fff" opacity=".18" transform="rotate(14 74 92)"/>
+      <path d="M94 38c3-8 8-12 14-14" stroke="#4A3921" stroke-width="4" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="s-sage" viewBox="0 0 200 200">
+      <path d="M100 194C38 152 36 60 100 8c64 52 62 144 0 186z" fill="#7DA25A"/>
+      <path d="M100 194C70 150 72 70 100 8c-26 70-28 140 0 186z" fill="#5E8741" opacity=".6"/>
+      <path d="M100 190V30M100 150c-18-8-30-20-38-36M100 150c18-8 30-20 38-36M100 112c-14-6-22-14-28-26M100 112c14-6 22-14 28-26" stroke="#2F4A1F" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".5"/>
+    </symbol>
+  </defs>
+</svg>
 
 <a class="skip" href="#carte">Aller à la carte</a>
 
 <header class="top">
-  <div class="wrap bar">
-    <a class="brand" href="#">Maison Alba</a>
-    <nav aria-label="Navigation">
-      <a href="#carte">Carte</a>
-      <a href="#maison">Maison</a>
-      <a href="#reserver">Réserver</a>
-      <a href="#infos">Horaires</a>
-    </nav>
-  </div>
+  <a class="brand" href="#" aria-label="Maison Alba, accueil"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="18" r="10" fill="#ee7b2e"/><path d="M15 9c0-3 1-5 4-6 .5 3 .5 5-2 6z" fill="#7da25a"/></svg>Maison Alba</a>
+  <nav aria-label="Navigation">
+    <a href="#carte">La carte</a>
+    <a href="#maison">La maison</a>
+    <a href="#infos">Horaires</a>
+    <a class="pill" href="#reserver">Réserver</a>
+  </nav>
 </header>
 
 <main>
 <section class="hero">
   <div class="hero-text">
-    <h1>Ce que le marché a donné ce matin.</h1>
-    <p class="intro">Bistrot de vingt couverts, rue des Tanneurs à Lyon. Le menu s’écrit après le marché et s’efface le soir.</p>
     <p class="status" id="status" aria-live="polite">Mardi à samedi, midi et soir</p>
-    <a class="btn" href="#reserver">Réserver une table</a>
+    <h1>Une cuisine d’automne, cuite au four à bois.</h1>
+    <p class="intro">Maison Alba est un bistrot de vingt couverts, rue des Tanneurs à Lyon. Le menu s’écrit chaque matin, après le marché.</p>
+    <div class="actions"><a class="btn" href="#reserver">Réserver une table</a><a class="btn ghost" href="#carte">Voir la carte</a></div>
   </div>
-
-  <aside class="ticket" aria-label="Ardoise du jour">
-    <p class="t-name">Maison Alba</p>
-    <p class="t-addr">14 rue des Tanneurs, Lyon 6e</p>
-    <p class="t-date" id="today">Menu du jour</p>
-    <hr>
-    <ul>
-      <li><span>Velouté de potimarron</span><b>9</b></li>
-      <li><span>Dos de cabillaud, risotto d’orge</span><b>26</b></li>
-      <li><span>Tarte fine aux poires</span><b>9</b></li>
-    </ul>
-    <hr>
-    <p class="t-sum"><span>Formule du midi, en semaine</span><b>22</b></p>
-    <p class="t-note">Prix en euros, service compris.</p>
-    <div class="stamp" aria-hidden="true">Fait<br>maison</div>
-  </aside>
+  <div class="stage" id="stage" aria-hidden="true">
+    <div class="sun"></div>
+    <div class="prod" style="--l:50%;--t:0%;--w:30%;--r:22deg;--d:.7s;--k:-6"><svg><use href="#s-sage"/></svg></div>
+    <div class="prod" style="--l:8%;--t:10%;--w:24%;--r:-28deg;--d:.8s;--k:-8"><svg><use href="#s-sage"/></svg></div>
+    <div class="prod" style="--l:4%;--t:30%;--w:52%;--r:-6deg;--d:.15s;--k:10"><svg><use href="#s-pumpkin"/></svg></div>
+    <div class="prod" style="--l:52%;--t:22%;--w:40%;--r:8deg;--d:.35s;--k:14"><svg><use href="#s-pear"/></svg></div>
+    <div class="prod" style="--l:38%;--t:56%;--w:30%;--r:-10deg;--d:.5s;--k:20"><svg><use href="#s-fig"/></svg></div>
+    <div class="prod" style="--l:66%;--t:60%;--w:30%;--r:6deg;--d:.6s;--k:18"><svg><use href="#s-girolle"/></svg></div>
+    <div class="prod" style="--l:18%;--t:70%;--w:17%;--r:-20deg;--d:.9s;--k:24"><svg><use href="#s-chestnut"/></svg></div>
+    <div class="prod" style="--l:30%;--t:80%;--w:13%;--r:30deg;--d:1s;--k:26"><svg><use href="#s-chestnut"/></svg></div>
+  </div>
 </section>
 
 <section class="carte" id="carte">
   <div class="wrap">
-    <h2>La carte de la semaine 43</h2>
-    <div class="menu">
-      <div>
+    <div class="head">
+      <h2>La carte de la semaine 43</h2>
+      <p>Six plats, pas un de plus. Formule du midi en semaine : entrée et plat, ou plat et dessert, 22 €.</p>
+    </div>
+    <div class="panels">
+      <article class="panel p-pear">
         <h3>Entrées</h3>
         <ul>
           <li><p><b>Velouté de potimarron</b><i>châtaignes grillées, huile de noisette</i></p><span class="dots"></span><em>9</em></li>
           <li><p><b>Œuf parfait</b><i>girolles, jus de volaille, persil</i></p><span class="dots"></span><em>12</em></li>
           <li><p><b>Burrata de la Drôme</b><i>figues rôties, miel de thym</i></p><span class="dots"></span><em>13</em></li>
         </ul>
-      </div>
-      <div>
+        <svg class="deco d1" aria-hidden="true"><use href="#s-pumpkin"/></svg>
+      </article>
+      <article class="panel p-green">
         <h3>Plats</h3>
         <ul>
           <li><p><b>Pot-au-feu de joue de bœuf</b><i>légumes racines, bouillon clair</i></p><span class="dots"></span><em>24</em></li>
           <li><p><b>Dos de cabillaud</b><i>risotto d’orge, beurre blanc citronné</i></p><span class="dots"></span><em>26</em></li>
           <li><p><b>Gnocchis au four</b><i>courge, sauge, vieux comté</i></p><span class="dots"></span><em>19</em></li>
         </ul>
-      </div>
-      <div>
+        <svg class="deco d2" aria-hidden="true"><use href="#s-girolle"/></svg>
+      </article>
+      <article class="panel p-blush">
         <h3>Desserts</h3>
         <ul>
           <li><p><b>Tarte fine aux poires</b><i>crème d’amande, glace vanille</i></p><span class="dots"></span><em>9</em></li>
           <li><p><b>Mousse au chocolat noir</b><i>fleur de sel, pain grillé</i></p><span class="dots"></span><em>8</em></li>
           <li><p><b>Fromages affinés</b><i>sélection de la crémerie Duval</i></p><span class="dots"></span><em>11</em></li>
         </ul>
-      </div>
+        <svg class="deco d3" aria-hidden="true"><use href="#s-pear"/></svg>
+      </article>
     </div>
-    <p class="menu-note">Formule du midi en semaine : entrée et plat, ou plat et dessert, 22 €. Dites-nous vos allergies en réservant, on adapte.</p>
   </div>
 </section>
 
 <section class="maison" id="maison">
-  <div class="wrap">
-    <div class="maison-text">
-      <h2>Vingt couverts, un four à bois, six plats.</h2>
-      <p>Camille et Théo ont ouvert Maison Alba en 2019, dans une ancienne boulangerie de la rue des Tanneurs. Le four est resté dans la salle. Il cuit le pain l’après-midi, les gnocchis et les légumes le soir.</p>
-      <p>Le menu change chaque semaine, parfois chaque jour. Il dépend de ce qui arrive des fermes autour de Lyon, livré deux fois par semaine.</p>
+  <div class="wrap two">
+    <div class="story">
+      <h2>Vingt couverts, un four, des fermes à moins de 50 km.</h2>
+      <p>Camille et Théo ont ouvert Maison Alba en 2019, dans une ancienne boulangerie de la rue des Tanneurs. Le four est resté dans la salle : il cuit le pain l’après-midi, les gnocchis et les légumes le soir.</p>
+      <p>Le menu change chaque semaine, parfois chaque jour, selon ce qui arrive des fermes autour de Lyon. Douze producteurs livrent en direct, deux fois par semaine. Voici ceux de cette carte.</p>
+      <ul class="legend" id="legend"></ul>
     </div>
-    <div class="producers">
-      <h3>Ceux qui nous livrent</h3>
-      <table>
-        <thead><tr><th scope="col">Producteur</th><th scope="col">Ce qu’il livre</th><th scope="col" class="num">Distance</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Poissonnerie Garnier</th><td>cabillaud, poissons du jour</td><td class="num">3 km</td></tr>
-          <tr><th scope="row">Fromagerie Duval</th><td>comté, fromages affinés</td><td class="num">4 km</td></tr>
-          <tr><th scope="row">Moulin de Vaugneray</th><td>farine de blé</td><td class="num">24 km</td></tr>
-          <tr><th scope="row">Jardins de l’Azergues</th><td>légumes, herbes, courges</td><td class="num">31 km</td></tr>
-          <tr><th scope="row">Ferme des Collonges</th><td>œufs, volailles</td><td class="num">38 km</td></tr>
-          <tr><th scope="row">Vergers Perrin</th><td>poires, pommes</td><td class="num">47 km</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <figure class="radar">
+      <svg id="radar" viewBox="-320 -320 640 640" role="img" aria-label="Carte des producteurs autour du restaurant, de 3 à 47 kilomètres"></svg>
+      <figcaption>Distance à vol d’oiseau depuis la rue des Tanneurs</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="reserver" id="reserver">
-  <div class="wrap">
+  <div class="wrap two">
     <div class="plan-col">
       <h2>Choisissez votre table.</h2>
-      <p>La salle compte sept tables. Touchez celle que vous voulez, on la note dans votre demande.</p>
+      <p>La salle compte sept tables et vingt couverts. Touchez celle que vous voulez, on la note dans votre demande.</p>
       <svg class="plan" id="plan" viewBox="0 0 480 340" role="group" aria-label="Plan de la salle"></svg>
     </div>
-    <form id="resa" data-mailto="contact@maison-alba.example">
+    <form id="resa">
       <p class="chosen" id="chosen" aria-live="polite">Aucune table choisie : on vous en proposera une.</p>
       <label for="nom">Nom</label>
       <input id="nom" name="nom" required autocomplete="name">
@@ -133,10 +170,10 @@
 </main>
 
 <footer class="foot" id="infos">
-  <div class="wrap">
-    <div class="hours">
+  <div class="wrap two">
+    <div>
       <h2>Horaires</h2>
-      <table>
+      <table class="hours">
         <tr><th scope="row">Lundi</th><td>fermé</td></tr>
         <tr><th scope="row">Mardi à vendredi</th><td>12 h à 14 h, 19 h à 22 h</td></tr>
         <tr><th scope="row">Samedi</th><td>12 h à 14 h 30, 19 h à 23 h</td></tr>
@@ -153,7 +190,6 @@
     <p class="credit">Site de démonstration conçu par <a href="https://loan-heron.fr">Loan Heron</a>. Établissement fictif.</p>
   </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
